@@ -1,0 +1,2 @@
+# ai-algo-trading-notebooks
+FOUNDATIONS OF MODERN ALGORITHMIC TRADING
