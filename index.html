@@ -3,210 +3,100 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AI & Algorithmic Trading — Volumes I–III + User Manual + 25 Colab Notebooks</title>
-  <meta name="description" content="A three-volume, governance-first collection with a user manual and 25 executable Colab notebooks for modern algorithmic trading." />
+  <title>Algorithmic Trading — Volumes I–III, User Manual & Colab Notebooks</title>
 
   <style>
     :root{
-      --bg:#0b0c10;
-      --panel:#12141a;
-      --text:#e8eaf0;
-      --muted:#b3b8c8;
-      --border:rgba(255,255,255,0.10);
+      --bg:#07080d;
+      --panel:#0f1220;
+      --panel-2:#141836;
+      --text:#eef0ff;
+      --muted:#b8bddb;
+      --border:rgba(255,255,255,0.08);
       --accent:#7aa2ff;
-      --accent2:#9cffd0;
-      --warn:#ffd37a;
+      --accent2:#6ee7c8;
     }
     *{box-sizing:border-box;}
-    html,body{height:100%;}
     body{
       margin:0;
       background:
-        radial-gradient(1200px 800px at 15% 0%, rgba(122,162,255,0.18), transparent 60%),
-        radial-gradient(1000px 700px at 85% 10%, rgba(156,255,208,0.10), transparent 55%),
-        radial-gradient(900px 700px at 60% 90%, rgba(255,211,122,0.08), transparent 55%),
+        radial-gradient(900px 600px at 15% 10%, rgba(122,162,255,0.18), transparent 55%),
+        radial-gradient(800px 600px at 85% 20%, rgba(110,231,200,0.12), transparent 55%),
         var(--bg);
       color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       line-height:1.6;
     }
-    a{color:var(--accent); text-decoration:none;}
-    a:hover{color:var(--accent2); text-decoration:underline;}
-    .container{max-width:1080px; margin:0 auto; padding:28px 18px 64px;}
+    .container{max-width:1100px;margin:0 auto;padding:32px 20px 80px;}
+    h1,h2,h3{line-height:1.25;}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{color:var(--accent2);}
     .hero{
-      padding:28px 24px;
+      padding:36px 32px;
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(20,24,54,0.9), rgba(15,18,32,0.9));
       border:1px solid var(--border);
-      background:rgba(18,20,26,0.75);
-      backdrop-filter: blur(6px);
-      border-radius:18px;
-      box-shadow:0 10px 28px rgba(0,0,0,0.35);
+      box-shadow:0 20px 60px rgba(0,0,0,0.45);
     }
     .kicker{
-      font-size:12px;
-      letter-spacing:0.16em;
       text-transform:uppercase;
+      letter-spacing:0.18em;
+      font-size:12px;
       color:var(--muted);
     }
-    h1{
-      margin:10px 0 10px;
-      font-size:36px;
-      line-height:1.15;
-    }
-    .subtitle{
-      margin:0 0 18px;
-      color:var(--muted);
-      max-width:76ch;
-      font-size:16px;
-    }
-    .meta{
-      display:grid;
-      gap:6px;
-      margin:10px 0 18px;
-      color:var(--muted);
-      font-size:14px;
-    }
-    .cta-row{
+    .hero h1{font-size:40px;margin:12px 0;}
+    .hero p{max-width:75ch;color:var(--muted);}
+    .cta{
+      margin-top:22px;
       display:flex;
+      gap:14px;
       flex-wrap:wrap;
-      gap:10px;
-      margin-top:12px;
     }
     .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:11px 14px;
-      border-radius:12px;
+      padding:12px 18px;
+      border-radius:14px;
       border:1px solid var(--border);
-      color:var(--text);
       background:rgba(255,255,255,0.04);
+      color:var(--text);
       font-weight:600;
     }
-    .btn:hover{border-color:rgba(122,162,255,0.55); text-decoration:none;}
     .btn.primary{
-      background:linear-gradient(135deg, rgba(122,162,255,0.26), rgba(156,255,208,0.12));
-      border-color:rgba(122,162,255,0.45);
+      background:linear-gradient(135deg, rgba(122,162,255,0.35), rgba(110,231,200,0.25));
+      border-color:rgba(122,162,255,0.5);
     }
-    .btn .tag{
-      font-size:12px;
-      padding:2px 8px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.14);
-      color:var(--muted);
-      font-weight:600;
-    }
+
+    .section{margin-top:56px;}
+    .section h2{font-size:28px;margin-bottom:14px;}
+    .section p{color:var(--muted);max-width:80ch;}
+
     .grid{
       display:grid;
-      grid-template-columns:1fr;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:18px;
-      margin-top:18px;
-    }
-    @media(min-width:900px){
-      .grid{grid-template-columns: 1.2fr 0.8fr;}
+      margin-top:22px;
     }
     .card{
-      padding:18px 18px;
+      padding:20px;
+      border-radius:18px;
+      background:rgba(20,24,54,0.7);
       border:1px solid var(--border);
-      background:rgba(18,20,26,0.72);
-      border-radius:18px;
     }
-    h2{margin:0 0 10px; font-size:20px;}
-    p{margin:10px 0; color:var(--muted);}
-    ul{margin:10px 0 0; padding-left:18px;}
-    li{margin:8px 0; color:var(--muted);}
-    .small{font-size:13px; color:var(--muted);}
-    .mono{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size:12.5px;
-      color:var(--muted);
-    }
-    .pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:12px;
-    }
-    .pill{
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.12);
-      background:rgba(255,255,255,0.03);
-      color:var(--muted);
-      font-size:12.5px;
-      font-weight:600;
-    }
-    .links{
-      display:grid;
-      gap:10px;
-      margin-top:10px;
-    }
-    .linkbox{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      padding:12px 12px;
-      border:1px solid rgba(255,255,255,0.10);
-      border-radius:14px;
-      background:rgba(255,255,255,0.02);
-    }
-    .linkbox .title{font-weight:700; color:var(--text);}
-    .linkbox .desc{color:var(--muted); font-size:13px;}
-    .quote-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-      margin-top:12px;
-    }
-    @media(min-width:900px){
-      .quote-grid{grid-template-columns:1fr 1fr;}
-    }
-    .quote{
-      padding:14px 14px;
-      border:1px solid rgba(255,255,255,0.10);
-      border-radius:16px;
-      background:rgba(255,255,255,0.02);
-    }
-    .quote .who{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      margin-bottom:8px;
-    }
-    .badge{
-      font-size:12px;
-      padding:2px 8px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.12);
-      color:var(--muted);
-      font-weight:700;
-    }
-    .stars{color:var(--warn); font-weight:800; letter-spacing:0.06em;}
-    .quote blockquote{
-      margin:0;
-      color:var(--muted);
+    .card h3{margin-top:0;}
+    .card p{font-size:14px;}
+
+    .review{
       font-size:14px;
+      color:var(--muted);
     }
-    .quote blockquote em{color:var(--text); font-style:normal; font-weight:700;}
-    .review-of-reviews{
-      margin-top:18px;
-      padding:18px 18px;
-      border:1px solid rgba(156,255,208,0.18);
-      border-radius:18px;
-      background:linear-gradient(135deg, rgba(156,255,208,0.06), rgba(122,162,255,0.05));
-    }
-    .review-of-reviews p{color:var(--muted);}
+    .review strong{color:var(--text);}
+
     .footer{
-      margin-top:22px;
-      padding-top:12px;
-      text-align:center;
+      margin-top:80px;
+      padding-top:24px;
+      border-top:1px solid var(--border);
       color:var(--muted);
       font-size:13px;
-    }
-    .hr{
-      height:1px;
-      background:rgba(255,255,255,0.10);
-      margin:18px 0;
+      text-align:center;
     }
   </style>
 </head>
@@ -214,243 +104,104 @@
 <body>
   <main class="container">
 
-    <header class="hero">
-      <div class="kicker">AI & Algorithmic Trading</div>
-      <h1>Volumes I–III + User Manual + 25 Colab Notebooks</h1>
-
-      <p class="subtitle">
-        A three-volume, governance-first collection that teaches algorithmic trading as a <strong>complete system</strong>:
-        data discipline, time-aware research, honest backtesting, strategy families, machine learning, portfolio construction,
-        execution realism, and the governance artifacts required to make results <strong>auditable and trustworthy</strong>.
-        Every chapter is paired with an executable Colab notebook — closing the gap between theory and implementation.
-      </p>
-
-      <div class="meta">
-        <div><strong>Author:</strong> Alejandro Reynoso</div>
-        <div><strong>Affiliation:</strong> External Lecturer, Cambridge Judge Business School</div>
-      </div>
-
-      <div class="cta-row">
-        <a class="btn primary" href="https://github.com/alexdibol/ai-algo-trading-notebooks" target="_blank" rel="noopener">
-          Open Notebooks Repository <span class="tag">GitHub</span>
-        </a>
-        <a class="btn" href="https://colab.research.google.com/github/alexdibol/ai-algo-trading-notebooks/blob/main/notebooks/chapter_1.ipynb" target="_blank" rel="noopener">
-          Start with Chapter 1 in Colab <span class="tag">Colab</span>
-        </a>
-        <a class="btn" href="#resources">
-          Download PDFs & Resources <span class="tag">PDF</span>
-        </a>
-      </div>
-
-      <div class="pill-row" aria-label="Collection highlights">
-        <div class="pill">25 chapter-aligned notebooks</div>
-        <div class="pill">Synthetic-first, correctness-first</div>
-        <div class="pill">Time discipline (no leakage)</div>
-        <div class="pill">Governance artifacts & reproducibility</div>
-        <div class="pill">Institutional-grade engineering mindset</div>
-      </div>
-    </header>
-
-    <section class="grid" style="margin-top:18px;">
-      <div class="card">
-        <h2>What this collection is (and why it’s different)</h2>
-        <p>
-          Most trading material teaches you how to produce a backtest plot. This collection teaches you how to build a
-          <strong>research laboratory</strong> and a <strong>deployment-ready workflow</strong> — with explicit handling of
-          the two things that destroy most quantitative work: <strong>time leakage</strong> and <strong>non-reproducibility</strong>.
-        </p>
-        <p>
-          The structure is deliberate. You validate logic on synthetic data first (where ground truth is known), then graduate to
-          realistic assumptions and evaluation. You learn how strategies fail, why they fail, and what minimum standards must exist
-          before you claim performance.
-        </p>
-        <ul>
-          <li><strong>Governance-first philosophy:</strong> artifacts, manifests, and auditability are treated as core research tools, not bureaucracy.</li>
-          <li><strong>Synthetic data as “truth serum”:</strong> separate code correctness from market noise before you touch real data.</li>
-          <li><strong>Time awareness as a hard constraint:</strong> evaluation respects chronology and decision timing, avoiding look-ahead bias.</li>
-          <li><strong>Executable pedagogy:</strong> each chapter has a Colab notebook, reducing friction from concept to implementation.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Quick start</h2>
-        <ol style="margin:10px 0 0; padding-left:18px; color:var(--muted);">
-          <li>Download <strong>Volume I</strong> and the <strong>User Manual</strong>.</li>
-          <li>Open <strong>Chapter 1</strong> in Colab and run top-to-bottom.</li>
-          <li>Use the notebooks as a lab: modify, stress-test, and audit your assumptions.</li>
-        </ol>
-        <div class="hr"></div>
-        <div class="links">
-          <div class="linkbox">
-            <div class="title">All resources in one place (recommended)</div>
-            <div class="desc">Use the GitHub README and resource index in the notebooks repository.</div>
-            <a href="https://github.com/alexdibol/ai-algo-trading-notebooks" target="_blank" rel="noopener">github.com/alexdibol/ai-algo-trading-notebooks</a>
-          </div>
-          <div class="linkbox">
-            <div class="title">Notebook index</div>
-            <div class="desc">Open chapter-by-chapter Colab links from the repository index.</div>
-            <a href="https://github.com/alexdibol/ai-algo-trading-notebooks#ai--algorithmic-trading--official-resources" target="_blank" rel="noopener">Open the index in README</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="card" style="margin-top:18px;">
-      <h2>Review of reviews (Gemini · OpenAI · Claude)</h2>
+    <section class="hero">
+      <div class="kicker">Algorithmic Trading</div>
+      <h1>Foundations of Modern Algorithmic Trading</h1>
       <p>
-        Three independent AI evaluations converge on the same conclusion: the collection’s core contribution is not a list of “strategies,”
-        but a <strong>disciplined methodology</strong> for building trading systems that do not collapse under scrutiny.
+        A three-volume course, a dedicated user manual, and twenty-five executable Colab notebooks.
+        This collection teaches algorithmic trading as a <strong>disciplined engineering system</strong> —
+        from data and causality, through backtesting and machine learning, to governance and deployment.
       </p>
 
-      <div class="quote-grid">
-        <div class="quote">
-          <div class="who">
-            <div><strong>ChatGPT (OpenAI)</strong></div>
-            <div class="stars">★★★★★</div>
-          </div>
-          <blockquote>
-            A rigorous three-volume collection with a user manual that treats algorithmic trading as a complete system.
-            Its defining strength is implementation: <em>25 chapter-aligned Colab notebooks</em> translating theory into reproducible workflows.
-            The tone is disciplined and unsensational: robustness, transparency, and governance over “easy alpha.”
-            <br><br>
-            <em>Punchline:</em> not trading tricks — a complete, executable framework for learning how modern algo trading is built, tested, and trusted.
-          </blockquote>
-        </div>
-
-        <div class="quote">
-          <div class="who">
-            <div><strong>Claude (Anthropic)</strong></div>
-            <div class="stars">★★★★★</div>
-          </div>
-          <blockquote>
-            Exceptional because it teaches you how to <em>avoid fooling yourself</em> — the most expensive mistake in quantitative finance.
-            The collection obsesses over time discipline and governance artifacts that make results reproducible and auditable.
-            Synthetic-first pedagogy ensures correctness before touching real markets.
-            <br><br>
-            <em>Bottom line:</em> honest failure beats impressive illusion; this builds systems that survive contact with reality.
-          </blockquote>
-        </div>
-
-        <div class="quote">
-          <div class="who">
-            <div><strong>Gemini / AI Evaluation</strong></div>
-            <div class="badge">Highlights</div>
-          </div>
-          <blockquote>
-            A governance-first approach reframes “process” as a speed enabler in institutional settings.
-            Synthetic data acts as a truth serum: if your strategy fails on controlled data, your code is broken.
-            Time awareness is treated as a structural adversary, preventing look-ahead bias.
-            A NumPy-first stance forces mastery of alignment and causality.
-            The book bridges classical quant logic with modern AI (HMMs, agents) without magical thinking.
-          </blockquote>
-        </div>
-
-        <div class="quote">
-          <div class="who">
-            <div><strong>Consensus</strong></div>
-            <div class="badge">Why it matters</div>
-          </div>
-          <blockquote>
-            The evaluations agree on a shared theme: this collection teaches not only “what to do,” but <em>how to know whether you’re right</em>.
-            It builds the habits and artifacts that separate professional research from backtest theater.
-          </blockquote>
-        </div>
-      </div>
-
-      <div class="review-of-reviews">
-        <h2 style="margin:0 0 8px;">One-sentence takeaway</h2>
-        <p style="margin:0;">
-          This is a course-length, implementation-complete blueprint for building algorithmic trading systems that are
-          <strong>correct first</strong>, <strong>time-consistent</strong>, and <strong>governable</strong> — the opposite of “impressive illusion.”
-        </p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/alexdibol/ai-algo-trading-notebooks">Open Notebooks Repository</a>
+        <a class="btn" href="https://github.com/alexdibol/ai-algo-trading-notebooks/releases">Download PDFs</a>
+        <a class="btn" href="https://colab.research.google.com/github/alexdibol/ai-algo-trading-notebooks/blob/main/notebooks/chapter_1.ipynb">Start with Chapter 1</a>
       </div>
     </section>
 
-    <section id="resources" class="card" style="margin-top:18px;">
-      <h2>Download PDFs</h2>
-      <p class="small">Hosted as GitHub Release assets for stable access.</p>
-
-      <div class="links">
-        <div class="linkbox">
-          <div class="title">Volume I — Foundations of Algorithmic Trading (PDF)</div>
-          <a href="https://github.com/alexdibol/ai-algo-trading-notebooks/releases/download/algo_trading-volumes-v01/VOLUME.1.FOUNDATIONS.OF.ALGORITHMIC.TRADING.pdf" target="_blank" rel="noopener">
-            Download Volume I
-          </a>
+    <section class="section">
+      <h2>Pedagogical Pillars</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Governance-First Thinking</h3>
+          <p>
+            Research is treated as an auditable process. Data fingerprints, run manifests,
+            and explicit decision timing are core learning tools, not afterthoughts.
+          </p>
         </div>
-
-        <div class="linkbox">
-          <div class="title">Volume II — Backtesting & Strategy Families (PDF)</div>
-          <a href="https://github.com/alexdibol/ai-algo-trading-notebooks/releases/download/algo_trading-volumes-v01/VOLUME.2.FOUNDATIONS.OF.ALGORITHMIC.TRADING.pdf" target="_blank" rel="noopener">
-            Download Volume II
-          </a>
+        <div class="card">
+          <h3>Time as a Structural Constraint</h3>
+          <p>
+            The collection enforces causality and chronological integrity,
+            eliminating look-ahead bias and misleading validation practices.
+          </p>
         </div>
-
-        <div class="linkbox">
-          <div class="title">Volume III — ML, Portfolio, Execution & Deployment (PDF)</div>
-          <a href="https://github.com/alexdibol/ai-algo-trading-notebooks/releases/download/algo_trading-volumes-v01/VOLUME.3.FOUNDATIONS.OF.ALGORITHMIC.TRADING.pdf" target="_blank" rel="noopener">
-            Download Volume III
-          </a>
+        <div class="card">
+          <h3>Synthetic Data as Ground Truth</h3>
+          <p>
+            Strategies are validated on controlled synthetic processes before touching real markets,
+            separating code correctness from market noise.
+          </p>
         </div>
-
-        <div class="linkbox">
-          <div class="title">User Manual — How to Navigate the Collection (PDF)</div>
-          <a href="https://github.com/alexdibol/ai-algo-trading-notebooks/releases/download/algo_trading-volumes-v01/USERS.MANUAL.FOUNDATIONS.OF.ALGORITHMIC.TRADING.pdf" target="_blank" rel="noopener">
-            Download User Manual
-          </a>
-        </div>
-      </div>
-
-      <div class="hr"></div>
-
-      <h2>Notebooks</h2>
-      <p class="small">
-        The notebooks live in a dedicated repository. Use the chapter index in the README to open any notebook directly in Colab.
-      </p>
-
-      <div class="links">
-        <div class="linkbox">
-          <div class="title">Notebooks repository (GitHub)</div>
-          <a href="https://github.com/alexdibol/ai-algo-trading-notebooks" target="_blank" rel="noopener">
-            Open notebooks repository
-          </a>
-          <div class="desc">Includes the full chapter index with direct Colab links.</div>
-        </div>
-
-        <div class="linkbox">
-          <div class="title">Open Chapter 1 (Colab)</div>
-          <a href="https://colab.research.google.com/github/alexdibol/ai-algo-trading-notebooks/blob/main/notebooks/chapter_1.ipynb" target="_blank" rel="noopener">
-            Launch Chapter 1 in Colab
-          </a>
-          <div class="desc">Recommended starting point for the full arc.</div>
+        <div class="card">
+          <h3>Executable Understanding</h3>
+          <p>
+            Every chapter has a corresponding Colab notebook, allowing readers
+            to move directly from concept to implementation.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="card" style="margin-top:18px;">
-      <h2>License and disclaimers</h2>
-      <p class="small">
-        Suggested standard license: MIT (place a LICENSE file in the repository if not already present).
-        The content is provided for educational and research purposes only.
-      </p>
+    <section class="section">
+      <h2>Volumes & Structure</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Volume I — Foundations</h3>
+          <p>Markets, data logic, returns, risk, time series anatomy, and disciplined pipelines.</p>
+        </div>
+        <div class="card">
+          <h3>Volume II — Backtesting & Strategies</h3>
+          <p>Simulation, trend following, mean reversion, factors, volatility, and evaluation limits.</p>
+        </div>
+        <div class="card">
+          <h3>Volume III — AI, Portfolios & Deployment</h3>
+          <p>Machine learning, regime detection, execution costs, RL, and multi-strategy systems.</p>
+        </div>
+        <div class="card">
+          <h3>User Manual</h3>
+          <p>A navigation guide explaining how to read, execute, and adapt the collection.</p>
+        </div>
+      </div>
+    </section>
 
-      <div class="hr"></div>
-
-      <p class="small">
-        <strong>Educational disclaimer:</strong> This material is not investment advice or trading advice. Markets are uncertain and risky.
-        Any use of the code, methods, or examples is undertaken entirely at your own risk.
-      </p>
-
-      <p class="small">
-        <strong>Use of AI tools:</strong> Artificial intelligence tools may have assisted in editing content and generating code.
-        However, conceptual design, coordination, methodological choices, editorial control, integration, and final responsibility
-        for the collection remained under direct human control throughout.
-      </p>
+    <section class="section">
+      <h2>Independent AI Evaluations</h2>
+      <div class="grid">
+        <div class="card review">
+          <strong>ChatGPT (OpenAI) — ★★★★★</strong><br/>
+          “Not a book of tricks, but a complete, executable framework for building,
+          testing, and trusting modern algorithmic trading systems.”
+        </div>
+        <div class="card review">
+          <strong>Claude (Anthropic) — ★★★★★</strong><br/>
+          “Exceptional because it teaches how to avoid fooling yourself —
+          honest failure over impressive illusion.”
+        </div>
+        <div class="card review">
+          <strong>Gemini — Evaluation Summary</strong><br/>
+          “A governance-first, synthetic-data-driven approach that prepares
+          students for institutional reality.”
+        </div>
+      </div>
     </section>
 
     <footer class="footer">
-      <div>© <span id="year"></span> Alejandro Reynoso</div>
-      <div class="small">Built for GitHub Pages • Designed as an executable companion to the AI & Algorithmic Trading volumes</div>
+      © <span id="year"></span> Alejandro Reynoso · Algorithmic Trading Course  
+      <br/>Designed for GitHub Pages · Executable by construction
     </footer>
+
   </main>
 
   <script>
@@ -458,3 +209,4 @@
   </script>
 </body>
 </html>
+
