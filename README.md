@@ -1,43 +1,67 @@
 # AI & Algorithmic Trading — Official Resources
 
-This repository accompanies a **substantial, end-to-end body of work** on algorithmic and AI-driven trading systems.
+This collection represents the result of an unusually **complete and disciplined effort** to document, explain, and implement modern algorithmic trading systems from first principles through production-grade considerations.
 
-Across **three full PDF volumes**, a dedicated **user manual**, and **twenty-five executable Google Colab notebooks**, this project takes the reader from first principles to fully governed, production-aware trading architectures.
+Across **three full PDF volumes**, a dedicated **user manual**, and **twenty-five tightly aligned Google Colab notebooks**, the project is designed as a **coherent learning and implementation path**, not as a loose anthology of topics or isolated examples.
 
-This is not a collection of disconnected notes or examples.  
-It is a **coherent system**, built with discipline around causality, time-awareness, reproducibility, and implementation fidelity.
+The intent of the collection is explicit:
 
-The materials below represent the **complete and authoritative access point** to that work.
+- to make **algorithmic trading understandable as a system**, not as a bag of tricks,
+- to close the persistent gap between **theory, code, and real-world constraints**,
+- and to provide readers with artifacts that are **reproducible, auditable, and extensible**.
+
+This is not a book that promises easy alpha or shortcut strategies.  
+It is a structured invitation to think clearly about markets, data, decisions, and risk — and then to implement those ideas with the same discipline.
+
+The materials below constitute the **complete and authoritative entry point** to the collection.
 
 ---
 
-## 📘 Book Volumes (PDF)
+## 📘 Book Volumes and User Manual (PDF)
 
-All PDFs are hosted as **GitHub Release assets** to ensure stable, citable links.
+The written component of the project is divided into three volumes, complemented by a standalone user manual.
+
+Each volume is a self-contained PDF, but together they form a single arc that moves deliberately from foundations to advanced systems and governance. The user manual explains how to navigate the collection, how the notebooks relate to the chapters, and how readers should approach the material depending on their background and objectives.
+
+All PDFs are hosted as **GitHub Release assets**, providing stable, citable links.
 
 - **Volume I — Foundations of Algorithmic Trading**  
   https://github.com/alexdibol/ai-algo-trading-notebooks/releases/download/algo_trading-volumes-v01/VOLUME.1.FOUNDATIONS.OF.ALGORITHMIC.TRADING.pdf
 
+  Focus: market structure, data logic, returns, risk, time series anatomy, and disciplined data pipelines.
+
 - **Volume II — Backtesting & Strategy Families**  
   https://github.com/alexdibol/ai-algo-trading-notebooks/releases/download/algo_trading-volumes-v01/VOLUME.2.FOUNDATIONS.OF.ALGORITHMIC.TRADING.pdf
+
+  Focus: simulation, evaluation, trend following, mean reversion, factor models, volatility, and the limits of historical testing.
 
 - **Volume III — Machine Learning, Portfolio Construction, Execution & Deployment**  
   https://github.com/alexdibol/ai-algo-trading-notebooks/releases/download/algo_trading-volumes-v01/VOLUME.3.FOUNDATIONS.OF.ALGORITHMIC.TRADING.pdf
 
+  Focus: supervised learning, regime detection, portfolio construction, transaction costs, reinforcement learning, multi-strategy systems, and governance.
+
 - **User Manual — How to Navigate the Collection**  
-  (PDF release asset — to be added here once uploaded)
+  https://github.com/alexdibol/ai-algo-trading-notebooks/releases/download/algo_trading-volumes-v01/USERS.MANUAL.FOUNDATIONS.OF.ALGORITHMIC.TRADING.pdf
+
+  Focus: how to read the volumes, how to use the notebooks, and how the pieces fit together as a single system.
 
 ---
 
 ## 📓 Companion Colab Notebooks (Chapters 1–25)
 
-Each chapter in the book is paired with a **one-to-one, executable Google Colab notebook**.
+Each of the 25 chapters is paired with **exactly one executable Google Colab notebook**.
 
-The notebooks are:
-- deterministic (explicit seeds),
-- time-aware (no leakage),
-- synthetic-first by default,
-- governance-native by construction.
+These notebooks are not illustrative demos. They are designed as **reference implementations** that mirror the logic, constraints, and sequencing of the written chapters.
+
+Key design principles of the notebooks:
+
+- **One-to-one alignment**: one chapter, one notebook.
+- **Time awareness**: no shuffling, no leakage, explicit decision timing.
+- **Synthetic-first design**: concepts are demonstrated without relying on fragile external data.
+- **Governance-native structure**: seeds, parameters, assumptions, and artifacts are explicit.
+- **Transparency over convenience**: minimal abstractions, no hidden machinery.
+
+Readers are encouraged to treat the notebooks as **laboratories**: modify them, stress them, break them, and understand where and why systems fail.
 
 **Notebooks repository**  
 https://github.com/alexdibol/ai-algo-trading-notebooks
@@ -142,9 +166,11 @@ https://colab.research.google.com/github/alexdibol/ai-algo-trading-notebooks/blo
 
 ---
 
-## 📌 Notes for Readers
+## 📌 Invitation to the Reader
 
-- Notebooks are designed to be executed **top-to-bottom**.
-- Random seeds, parameters, and assumptions are explicitly logged.
-- Synthetic data is used by default; real-data adapters are isolated and optional.
-- Chapters are intended to be followed **in order**, without conceptual fast-forwarding.
+This collection rewards **patience, rigor, and curiosity**.
+
+Readers are encouraged to move sequentially, to question results, to adapt the notebooks, and to treat the material not as a finished product but as a **framework for thinking and building**.
+
+If you are willing to engage with algorithmic trading as a disciplined engineering problem — rather than as a collection of shortcuts — this collection was built for you.
+
