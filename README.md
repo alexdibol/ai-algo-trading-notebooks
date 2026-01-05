@@ -1,17 +1,18 @@
 # AI & Algorithmic Trading — Official Resources
 
-This collection represents the result of an unusually **complete and disciplined effort** to document, explain, and implement modern algorithmic trading systems from first principles through production-grade considerations.
+This collection represents the result of an unusually **complete, disciplined, and end-to-end effort** to document, explain, and implement modern algorithmic trading systems — from first principles to production-aware and governance-conscious architectures.
 
-Across **three full PDF volumes**, a dedicated **user manual**, and **twenty-five tightly aligned Google Colab notebooks**, the project is designed as a **coherent learning and implementation path**, not as a loose anthology of topics or isolated examples.
+Across **three full PDF volumes**, a dedicated **user manual**, and **twenty-five tightly aligned Google Colab notebooks**, the project is designed as a **coherent learning and implementation path**, not as a loose anthology of topics or disconnected examples.
 
-The intent of the collection is explicit:
+The objective of the collection is explicit:
 
-- to make **algorithmic trading understandable as a system**, not as a bag of tricks,
+- to treat **algorithmic trading as a system**, not as a bag of tricks,
 - to close the persistent gap between **theory, code, and real-world constraints**,
-- and to provide readers with artifacts that are **reproducible, auditable, and extensible**.
+- to provide artifacts that are **reproducible, auditable, and extensible**,
+- and to model what disciplined research-to-production thinking looks like in practice.
 
-This is not a book that promises easy alpha or shortcut strategies.  
-It is a structured invitation to think clearly about markets, data, decisions, and risk — and then to implement those ideas with the same discipline.
+This is not a promise of easy alpha.  
+It is an invitation to think clearly about markets, data, decisions, and risk — and then to implement those ideas with rigor.
 
 The materials below constitute the **complete and authoritative entry point** to the collection.
 
@@ -19,49 +20,35 @@ The materials below constitute the **complete and authoritative entry point** to
 
 ## 📘 Book Volumes and User Manual (PDF)
 
-The written component of the project is divided into three volumes, complemented by a standalone user manual.
-
-Each volume is a self-contained PDF, but together they form a single arc that moves deliberately from foundations to advanced systems and governance. The user manual explains how to navigate the collection, how the notebooks relate to the chapters, and how readers should approach the material depending on their background and objectives.
-
-All PDFs are hosted as **GitHub Release assets**, providing stable, citable links.
+All PDFs are hosted as **GitHub Release assets** to ensure stable, citable links.
 
 - **Volume I — Foundations of Algorithmic Trading**  
   https://github.com/alexdibol/ai-algo-trading-notebooks/releases/download/algo_trading-volumes-v01/VOLUME.1.FOUNDATIONS.OF.ALGORITHMIC.TRADING.pdf
 
-  Focus: market structure, data logic, returns, risk, time series anatomy, and disciplined data pipelines.
-
 - **Volume II — Backtesting & Strategy Families**  
   https://github.com/alexdibol/ai-algo-trading-notebooks/releases/download/algo_trading-volumes-v01/VOLUME.2.FOUNDATIONS.OF.ALGORITHMIC.TRADING.pdf
-
-  Focus: simulation, evaluation, trend following, mean reversion, factor models, volatility, and the limits of historical testing.
 
 - **Volume III — Machine Learning, Portfolio Construction, Execution & Deployment**  
   https://github.com/alexdibol/ai-algo-trading-notebooks/releases/download/algo_trading-volumes-v01/VOLUME.3.FOUNDATIONS.OF.ALGORITHMIC.TRADING.pdf
 
-  Focus: supervised learning, regime detection, portfolio construction, transaction costs, reinforcement learning, multi-strategy systems, and governance.
-
 - **User Manual — How to Navigate the Collection**  
   https://github.com/alexdibol/ai-algo-trading-notebooks/releases/download/algo_trading-volumes-v01/USERS.MANUAL.FOUNDATIONS.OF.ALGORITHMIC.TRADING.pdf
-
-  Focus: how to read the volumes, how to use the notebooks, and how the pieces fit together as a single system.
 
 ---
 
 ## 📓 Companion Colab Notebooks (Chapters 1–25)
 
-Each of the 25 chapters is paired with **exactly one executable Google Colab notebook**.
+Each chapter in the book is paired with **exactly one executable Google Colab notebook**.
 
-These notebooks are not illustrative demos. They are designed as **reference implementations** that mirror the logic, constraints, and sequencing of the written chapters.
+These notebooks are not illustrative demos; they are **reference implementations** designed with the same constraints discussed in the text.
 
-Key design principles of the notebooks:
+Core design principles:
 
-- **One-to-one alignment**: one chapter, one notebook.
-- **Time awareness**: no shuffling, no leakage, explicit decision timing.
-- **Synthetic-first design**: concepts are demonstrated without relying on fragile external data.
-- **Governance-native structure**: seeds, parameters, assumptions, and artifacts are explicit.
-- **Transparency over convenience**: minimal abstractions, no hidden machinery.
-
-Readers are encouraged to treat the notebooks as **laboratories**: modify them, stress them, break them, and understand where and why systems fail.
+- one chapter, one notebook,
+- explicit time awareness and causality,
+- synthetic-first demonstrations by default,
+- transparent implementations over black-box abstractions,
+- governance-native structure (seeds, parameters, manifests, artifacts).
 
 **Notebooks repository**  
 https://github.com/alexdibol/ai-algo-trading-notebooks
@@ -166,11 +153,25 @@ https://colab.research.google.com/github/alexdibol/ai-algo-trading-notebooks/blo
 
 ---
 
-## 📌 Invitation to the Reader
+## ⚖️ License
 
-This collection rewards **patience, rigor, and curiosity**.
+This project is released under the **MIT License**.
 
-Readers are encouraged to move sequentially, to question results, to adapt the notebooks, and to treat the material not as a finished product but as a **framework for thinking and building**.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, subject to the following conditions:
 
-If you are willing to engage with algorithmic trading as a disciplined engineering problem — rather than as a collection of shortcuts — this collection was built for you.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+## ⚠️ Disclaimer and Use of AI Tools
+
+This collection is provided for **educational and research purposes only**. It does not constitute investment advice, trading advice, or a recommendation to engage in any particular trading strategy or financial activity.
+
+Market behavior is uncertain, and any application of the ideas, code, or methodologies presented here is undertaken **entirely at the reader’s own risk**.
+
+Artificial intelligence tools may have been used to **assist** in aspects of editing, code generation, formatting, or drafting during the development of this collection.  
+However, **conceptual design, methodological choices, system architecture, editorial judgment, integration, and final responsibility** for the content, structure, and conclusions of the work remained **under direct human control** throughout.
+
+The author assumes full responsibility for the coordination, design, and construction of the collection as a whole.
