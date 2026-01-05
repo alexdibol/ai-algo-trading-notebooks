@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Algorithmic Trading — Volumes I–III, User Manual & Colab Notebooks</title>
-  <meta name="description" content="A three-volume algorithmic trading collection with a user manual and 25 executable Colab notebooks. Governance-first, time-aware, synthetic-first by default." />
+  <title>FOUNDATIONS OF MODERN ALGORITHMIC TRADING</title>
+  <meta name="description" content="Foundations of Modern Algorithmic Trading: three PDF volumes, a user manual, and 25 executable Colab notebooks. Governance-first, time-aware, synthetic-first by default." />
 
   <style>
     :root{
@@ -66,11 +66,13 @@
       font-size:40px;
       margin:12px 0 10px;
       line-height:1.15;
-      max-width:26ch;
+      max-width:32ch;
+      text-transform:uppercase;
+      letter-spacing:0.02em;
     }
     .subtitle{
-      margin:0 0 18px;
-      max-width:82ch;
+      margin:0;
+      max-width:92ch;
       color:var(--muted);
       font-size:16px;
     }
@@ -79,35 +81,7 @@
       gap:6px;
       color:var(--muted);
       font-size:14px;
-      margin:12px 0 6px;
-    }
-    .cta{
-      margin-top:22px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 18px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,0.04);
-      color:var(--text);
-      font-weight:700;
-      box-shadow:0 8px 24px rgba(0,0,0,0.22);
-    }
-    .btn:hover{
-      text-decoration:none;
-      border-color:rgba(122,162,255,0.45);
-      transform:translateY(-1px);
-    }
-    .btn.primary{
-      background:linear-gradient(135deg, rgba(122,162,255,0.36), rgba(110,231,200,0.22));
-      border-color:rgba(122,162,255,0.52);
+      margin:16px 0 0;
     }
 
     /* Sections */
@@ -117,7 +91,7 @@
       margin:0 0 14px;
       letter-spacing:-0.02em;
     }
-    .section p{color:var(--muted);max-width:86ch;margin:10px 0;}
+    .section p{color:var(--muted);max-width:92ch;margin:10px 0;}
 
     /* Grid + cards */
     .grid{
@@ -171,6 +145,25 @@
       letter-spacing:0.02em;
     }
 
+    /* Notebooks link block (simple, not button-heavy) */
+    .notebooks-block{
+      margin-top:18px;
+      padding:18px 18px;
+      border-radius:18px;
+      border:1px solid rgba(122,162,255,0.18);
+      background:linear-gradient(135deg, rgba(122,162,255,0.06), rgba(110,231,200,0.04));
+      color:var(--muted);
+      max-width:92ch;
+    }
+    .notebooks-block strong{color:var(--text);}
+    .notebooks-links{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      font-weight:700;
+    }
+
     /* Reviews */
     .review{
       font-size:14px;
@@ -185,6 +178,7 @@
       border:1px solid rgba(110,231,200,0.18);
       background:linear-gradient(135deg, rgba(110,231,200,0.06), rgba(122,162,255,0.05));
       color:var(--muted);
+      max-width:92ch;
     }
     .review-of-reviews strong{color:var(--text);}
 
@@ -205,87 +199,28 @@
   <main class="container">
 
     <section class="hero">
-      <div class="kicker">Algorithmic Trading Course</div>
-      <h1>AI & Algorithmic Trading — Volumes I–III + User Manual</h1>
+      <div class="kicker">Volumes I–III · User Manual · 25 Colab Notebooks</div>
+      <h1>FOUNDATIONS OF MODERN ALGORITHMIC TRADING</h1>
 
       <p class="subtitle">
         A three-volume, governance-first collection with a dedicated user manual and twenty-five executable Colab notebooks.
-        This course teaches algorithmic trading as a <strong>disciplined engineering system</strong>:
-        data logic, causality, honest backtesting, strategy families, machine learning, portfolios, execution realism,
-        and the artifacts required to make results <strong>auditable and trustworthy</strong>.
+        The objective is to teach algorithmic trading as a disciplined engineering system: data logic, causality, honest backtesting,
+        strategy families, machine learning, portfolio construction, execution realism, and the artifacts required to make results auditable.
       </p>
 
       <div class="meta">
         <div><strong>Author:</strong> Alejandro Reynoso</div>
         <div><strong>Affiliation:</strong> External Lecturer, Cambridge Judge Business School</div>
       </div>
-
-      <div class="cta">
-        <a class="btn primary" href="https://github.com/alexdibol/ai-algo-trading-notebooks/releases" target="_blank" rel="noopener">
-          Download PDFs (Release Assets)
-        </a>
-
-        <a class="btn" href="https://github.com/alexdibol/ai-algo-trading-notebooks" target="_blank" rel="noopener">
-          Open Notebooks Repository
-        </a>
-
-        <a class="btn" href="https://github.com/alexdibol/ai-algo-trading-notebooks#ai--algorithmic-trading--official-resources" target="_blank" rel="noopener">
-          Open Notebook Index
-        </a>
-
-        <a class="btn" href="https://alexdibol.github.io" target="_blank" rel="noopener">
-          Back to Main Site
-        </a>
-      </div>
     </section>
 
-    <section class="section">
-      <h2>Pedagogical Pillars</h2>
-      <p>
-        The collection is designed to prevent the most expensive failure modes in quantitative finance:
-        look-ahead bias, non-reproducible results, and “backtest theater.” The goal is to teach methods that survive scrutiny.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Governance-First Thinking</h3>
-          <p>
-            Research is treated as an auditable process. Data fingerprints, run manifests,
-            and explicit decision timing are core learning tools, not bureaucracy.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Time as a Structural Constraint</h3>
-          <p>
-            The course enforces causality and chronological integrity,
-            eliminating look-ahead bias and misleading validation practices.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Synthetic Data as Ground Truth</h3>
-          <p>
-            Strategies are validated on controlled synthetic processes before touching real markets,
-            separating code correctness from market noise.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Executable Understanding</h3>
-          <p>
-            Every chapter has a corresponding Colab notebook, allowing readers
-            to move directly from concept to implementation.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
+    <!-- MOVED UP: VOLUMES & STRUCTURE ABOVE PEDAGOGICAL PILLARS -->
+    <section class="section" id="volumes">
       <h2>Volumes & Structure</h2>
       <p>
-        Each box below links directly to the corresponding PDF (hosted as a GitHub Release asset).
-        The notebooks live in a companion repository and are accessible through a chapter-by-chapter Colab index.
+        The written component is organized into three PDF volumes and a standalone user manual. Each box below links directly to the corresponding
+        PDF (hosted as a GitHub Release asset). The companion notebooks live in a separate repository and provide an executable implementation path
+        aligned one-to-one with Chapters 1–25.
       </p>
 
       <div class="grid">
@@ -313,28 +248,84 @@
           <div class="hint">Download PDF →</div>
         </a>
       </div>
+
+      <div class="notebooks-block" id="notebooks">
+        <strong>Companion notebooks (Chapters 1–25):</strong>
+        Each chapter has exactly one executable Colab notebook. The notebooks are designed as reference implementations:
+        time-aware, synthetic-first by default, and governance-native (explicit seeds, parameters, assumptions, and artifacts).
+        <div class="notebooks-links">
+          <a href="https://github.com/alexdibol/ai-algo-trading-notebooks" target="_blank" rel="noopener">Open notebooks repository →</a>
+          <a href="https://github.com/alexdibol/ai-algo-trading-notebooks#ai--algorithmic-trading--official-resources" target="_blank" rel="noopener">Open notebook index →</a>
+        </div>
+      </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="pillars">
+      <h2>Pedagogical Pillars</h2>
+
+      <p>
+        This collection is built around a small number of explicit pedagogical commitments. These are not stylistic preferences;
+        they are design constraints intended to prevent the most common and costly failure modes in quantitative finance education and practice.
+      </p>
+
+      <ul style="margin-top:18px; padding-left:22px; color:var(--muted); max-width:92ch;">
+        <li style="margin-bottom:14px;">
+          <strong style="color:var(--text);">Governance-first thinking.</strong>
+          Research is treated as an auditable process. Every result is accompanied by explicit assumptions, parameter choices, data lineage,
+          and timing discipline. Governance is framed not as bureaucracy, but as a prerequisite for speed, trust, and institutional use.
+        </li>
+
+        <li style="margin-bottom:14px;">
+          <strong style="color:var(--text);">Time as a structural constraint.</strong>
+          Time is treated as an adversary, not an index. The material enforces a strict separation between information available at decision time
+          and information observed ex post, eliminating look-ahead bias and unrealistic validation.
+        </li>
+
+        <li style="margin-bottom:14px;">
+          <strong style="color:var(--text);">Synthetic data as ground truth.</strong>
+          Strategies and pipelines are first tested on synthetic processes where the data-generating mechanism is known. This separates implementation errors
+          from market noise and inoculates readers against hallucinated performance.
+        </li>
+
+        <li style="margin-bottom:14px;">
+          <strong style="color:var(--text);">Transparency over abstraction.</strong>
+          The notebooks favor explicit implementations over black-box convenience layers. This forces readers to understand alignment, indexing,
+          and causality rather than relying on tooling that may silently introduce errors.
+        </li>
+
+        <li style="margin-bottom:14px;">
+          <strong style="color:var(--text);">Executable understanding.</strong>
+          Every chapter is paired with a corresponding Colab notebook. Concepts are not considered understood until they can be executed, inspected,
+          modified, and stress-tested by the reader.
+        </li>
+      </ul>
+
+      <p style="margin-top:20px;">
+        Together, these principles shift attention away from isolated strategy performance and toward the construction of systems that are robust,
+        interpretable, and suitable for real-world use.
+      </p>
+    </section>
+
+    <section class="section" id="evaluations">
       <h2>Independent AI Evaluations</h2>
       <p>
-        The following “reviews of the collection” are independent AI assessments. They converge on a single theme:
-        the collection’s distinctive value is not a list of tricks, but a disciplined methodology that prevents self-deception.
+        The following assessments are independent AI evaluations of the collection. They converge on a single theme: the distinctive value here is not a list
+        of trading tricks, but a disciplined methodology that prevents self-deception and improves reproducibility.
       </p>
 
       <div class="grid">
         <div class="card review">
           <strong>ChatGPT (OpenAI)</strong> <span class="stars">★★★★★</span><br/>
-          “A rigorous three-volume collection, complemented by a focused User’s Manual, that offers a coherent and professional
-          treatment of quantitative trading. A defining strength is its emphasis on implementation: each chapter is paired with a full Colab notebook,
-          translating theory into reproducible workflows. The tone is disciplined and unsensational — robustness, transparency, and governance over easy alpha.”
+          “A rigorous three-volume collection, complemented by a focused User’s Manual, that treats algorithmic trading as a complete system.
+          A defining strength is its emphasis on implementation: each chapter is paired with a full Colab notebook, translating theory into reproducible workflows.
+          The tone is disciplined and unsensational — robustness, transparency, and governance over easy alpha.”
         </div>
 
         <div class="card review">
           <strong>Claude (Anthropic)</strong> <span class="stars">★★★★★</span><br/>
           “Exceptional for one reason: it teaches you how to avoid fooling yourself — the most expensive mistake in quantitative finance.
-          Every chapter includes an executable Colab notebook, and the collection obsesses over time discipline and governance artifacts
-          that make results reproducible and auditable. Honest failure beats impressive illusion.”
+          Every chapter includes an executable Colab notebook, and the collection obsesses over time discipline and governance artifacts that make results reproducible and auditable.
+          Honest failure beats impressive illusion.”
         </div>
 
         <div class="card review">
@@ -352,25 +343,27 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="license">
       <h2>License and Disclaimers</h2>
+
       <p class="small">
         <strong>Suggested standard license:</strong> MIT License (recommended for the notebooks/code repository; include a LICENSE file if not already present).
       </p>
+
       <p class="small">
         <strong>Educational disclaimer:</strong> This material is provided for educational and research purposes only. It does not constitute investment advice,
         trading advice, or a recommendation to engage in any particular strategy. Markets are risky and outcomes are uncertain; any use is undertaken entirely at your own risk.
       </p>
+
       <p class="small">
         <strong>Use of AI tools:</strong> Artificial intelligence tools may have assisted in the editing of content and the generation of code.
-        However, the coordination, conceptual design, methodological choices, editorial control, integration, and final responsibility for the collection
-        remained under direct human control throughout.
+        However, the coordination, conceptual design, methodological choices, editorial control, integration, and final responsibility for the collection remained under direct human control throughout.
       </p>
     </section>
 
     <footer class="footer">
-      © <span id="year"></span> Alejandro Reynoso · AI & Algorithmic Trading
-      <br/>Hosted on GitHub Pages · Designed for durable, executable courseware
+      © <span id="year"></span> Alejandro Reynoso · FOUNDATIONS OF MODERN ALGORITHMIC TRADING
+      <br/>Hosted on GitHub Pages · Built as durable, executable courseware
     </footer>
 
   </main>
@@ -380,3 +373,4 @@
   </script>
 </body>
 </html>
+
